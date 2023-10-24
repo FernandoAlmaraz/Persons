@@ -12,7 +12,10 @@ from persons.models import Person
 
 def bienvenido(request):
     no_person = Person.objects.count()
-    return render(request, "bienvenido.html", {"no_person": no_person})
+    persons = Person.objects.all()
+    return render(
+        request, "bienvenido.html", {"no_person": no_person, "persons": persons}
+    )
 
 
 # def despedida(request):

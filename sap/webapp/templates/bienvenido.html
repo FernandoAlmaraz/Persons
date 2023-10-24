@@ -10,6 +10,21 @@
     <div>
         Numero de personas:{{no_person}}
     </div>
-
+    <div>
+        <ul>
+            {%for person in persons%}
+                <div>
+                    <li>
+                        Nombre: {{person.name}}
+                        Apellido: {{person.last_name}}  
+                        email: {{person.email}}
+                        <a href="detail_person/{{person.id}}">Ver detalle</a>
+                    </li>
+            {%endfor%}
+                </div>
+        </ul>
+    <div>
+        <a href="new_person">Añadir nueva persona</a>
+    </div>
 </body>
 </html>
