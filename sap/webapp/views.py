@@ -4,7 +4,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 def bienvenido(request):
-    return HttpResponse("Hola a todos")
+    return render(request, "bienvenido.html")
 
 
 def despedida(request):
