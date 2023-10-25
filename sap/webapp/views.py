@@ -12,7 +12,8 @@ from persons.models import Person
 
 def bienvenido(request):
     no_person = Person.objects.count()
-    persons = Person.objects.all()
+    # persons = Person.objects.all()
+    persons = Person.objects.order_by("id")
     return render(
         request, "bienvenido.html", {"no_person": no_person, "persons": persons}
     )
