@@ -8,21 +8,34 @@
 <body>
     <h1>Sistema de administracion de personas (SAP)</h1>
     <div>
-        Numero de personas:{{no_person}}
+        Numero de personas: {{no_person}}
     </div>
     <div>
         <ul>
-            {%for person in persons%}
-                <div>
-                    <li>
-                        Nombre: {{person.name}}
-                        Apellido: {{person.last_name}}  
-                        email: {{person.email}}
-                        <a href="detail_person/{{person.id}}">Ver detalle</a>
-                    </li>
-            {%endfor%}
-                </div>
-        </ul>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for person in persons%}  
+                        <tr>
+                            <td>{{person.id}} </td>
+                            <td> {{person.name}} {{person.last_name}} </td>
+                            <td>{{person.email}}</td>
+                            <td><a href="detail_person/{{person.id}}">Ver detalle</a></td>
+                            <td><a href="edit_person/{{person.id}}">Editar</a></td>
+                            <td><a href="delete_person/{{person.id}}">Eliminar</a></td>
+                        </tr>
+                        {%endfor%} 
+                    </tbody>
+                </table><br>            
     <div>
         <a href="new_person">Añadir nueva persona</a>
     </div>
